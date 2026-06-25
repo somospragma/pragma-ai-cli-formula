@@ -1,27 +1,27 @@
 class PragmaAi < Formula
   desc "Pragma AI CLI — sync AI assistant configuration for Pragma projects"
   homepage "https://github.com/somospragma/pragma-ai-cli-formula"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     on_arm do
-      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.0/pragma-ai-cli_0.1.0_darwin_arm64.tar.gz"
-      sha256 "415a11e7aef1bac8b8501f28a1b2d63bdea433d911fe743b68beda05616837d8"
+      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.1/pragma-ai-cli_0.1.1_darwin_arm64.tar.gz"
+      sha256 "acfae6d2376a19eeb9d8bc5237347cc36195e4a1fe1e0d871b2d50f451ccbc52"
     end
     on_intel do
-      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.0/pragma-ai-cli_0.1.0_darwin_amd64.tar.gz"
-      sha256 "227631c011d1bf42f8afb78488b795e3a143675015646ee106b1556820e203f9"
+      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.1/pragma-ai-cli_0.1.1_darwin_amd64.tar.gz"
+      sha256 "0d2b826bb35bab7e3ee8b6d702c106704e1a8deaf4ee5f8a77f0ca66cc0dbb63"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.0/pragma-ai-cli_0.1.0_linux_arm64.tar.gz"
-      sha256 "78b21bf466a0009a5b0fca3141ec72df3476449e0ee4d313d9d7a95f7b6e7e91"
+      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.1/pragma-ai-cli_0.1.1_linux_arm64.tar.gz"
+      sha256 "9d0422e006ab942c2057d48bfb003c29c2777d6d8c4397fe346debd273408b06"
     end
     on_intel do
-      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.0/pragma-ai-cli_0.1.0_linux_amd64.tar.gz"
-      sha256 "d2565658da6f5d8d4d6a2ca8bd47d948d1fa3ba1e716c51e6663c35fc76b69a9"
+      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.1/pragma-ai-cli_0.1.1_linux_amd64.tar.gz"
+      sha256 "c5f114138077b01f3d95cb2c7824a6cb175ba3947bd61290bce58553876f8906"
     end
   end
 
