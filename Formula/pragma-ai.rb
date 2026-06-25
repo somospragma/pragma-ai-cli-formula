@@ -6,22 +6,22 @@ class PragmaAi < Formula
   on_macos do
     on_arm do
       url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.1/pragma-ai-cli_0.1.1_darwin_arm64.tar.gz"
-      sha256 "acfae6d2376a19eeb9d8bc5237347cc36195e4a1fe1e0d871b2d50f451ccbc52"
+      sha256 "cc1930a2dd8ca97f8fa5f2f0b32dcdf9891e568e740363f00926989469c5871d"
     end
     on_intel do
       url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.1/pragma-ai-cli_0.1.1_darwin_amd64.tar.gz"
-      sha256 "0d2b826bb35bab7e3ee8b6d702c106704e1a8deaf4ee5f8a77f0ca66cc0dbb63"
+      sha256 "1afd882bc0d5f2952cd45104b395972e7e2cdf38196178d561c66fefdd67043b"
     end
   end
 
   on_linux do
     on_arm do
       url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.1/pragma-ai-cli_0.1.1_linux_arm64.tar.gz"
-      sha256 "9d0422e006ab942c2057d48bfb003c29c2777d6d8c4397fe346debd273408b06"
+      sha256 "97f21a03fb044f83992fac268167d0a9c4e5b9a6aa894548e1a01f9b8e0cb6b3"
     end
     on_intel do
       url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/0.1.1/pragma-ai-cli_0.1.1_linux_amd64.tar.gz"
-      sha256 "c5f114138077b01f3d95cb2c7824a6cb175ba3947bd61290bce58553876f8906"
+      sha256 "c683ff1a96c89f044dadb9576ff0f276d67376fe6f06a2eb9f892413f91ea067"
     end
   end
 
