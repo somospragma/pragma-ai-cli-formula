@@ -1,27 +1,27 @@
 class PragmaAi < Formula
   desc "Pragma AI CLI — sync AI assistant configuration for Pragma projects"
   homepage "https://github.com/somospragma/pragma-ai-cli-formula"
-  version "0.1.2"
+  version "0.1.4"
 
   on_macos do
     on_arm do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/0.1.2/pragma-ai-cli_0.1.2_darwin_arm64.tar.gz"
-      sha256 "047975ec6d6c76fe0e4eb8964b65eba34b1c858ab2321f32f78086d515f88e1c"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/0.1.4/pragma-ai-cli_0.1.4_darwin_arm64.tar.gz"
+      sha256 "68dbab245c23905edd212325ed76d140e89f37958c93f379d644fcb1d98989fa"
     end
     on_intel do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/0.1.2/pragma-ai-cli_0.1.2_darwin_amd64.tar.gz"
-      sha256 "0ecf540dee3670c5b3223ea1e5a3dc42f0eabe9bbd37c6fdd62c33735a7d0c13"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/0.1.4/pragma-ai-cli_0.1.4_darwin_amd64.tar.gz"
+      sha256 "ffc9366e83dd759af2e748d611a462a0f159c3a0186e371c79f9191ed8eb4400"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/0.1.2/pragma-ai-cli_0.1.2_linux_arm64.tar.gz"
-      sha256 "50af870d78724c5d234159faca21bf452f1796e0a70770de5bc7fa88bd140947"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/0.1.4/pragma-ai-cli_0.1.4_linux_arm64.tar.gz"
+      sha256 "a2891355776022d3d04191a7adb84ad68416859f785119f0bdacbcd46a03d5f7"
     end
     on_intel do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/0.1.2/pragma-ai-cli_0.1.2_linux_amd64.tar.gz"
-      sha256 "0be85dae479a6b2de576c35bf828cab61aaca48c0771547e27f29fb9efcb0925"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/0.1.4/pragma-ai-cli_0.1.4_linux_amd64.tar.gz"
+      sha256 "bde6d378deaa9550bd7d9455469ba1ceaf852acbbc0db26880672e12363a3db6"
     end
   end
 
@@ -39,7 +39,7 @@ class PragmaAi < Formula
     <<~EOS
       Pragma AI has been installed successfully.
 
-      Background services have been configured to sync your assets every 4 hours.
+      Background services have been configured to sync your assets every 24 hours.
 
       To get started, open a terminal and run:
         pragma-ai
