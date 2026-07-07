@@ -1,15 +1,15 @@
 {
-  "version": "1.0.2",
+  "version": "1.1.4",
   "description": "Pragma AI CLI — AI Skill Market para pragmáticos",
   "homepage": "https://github.com/somospragma/pragma-ai-cli-formula",
   "license": "Proprietary",
   "architecture": {
     "64bit": {
-      "url": "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.0.2/pragma-ai-cli_1.0.2_windows_amd64.zip",
-      "hash": "ac2878e0f2fe94f678ad1df4c87fd69757d6a1c489fcc662dcdf6bbd6edecdbe"
+      "url": "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.1.4/pragma-ai-cli_1.1.4_windows_amd64.zip",
+      "hash": "fa145c8443da4a0684559b011470155d458d077ca193a93a161afe86697e903a"
     }
   },
-  "bin": ["pragma-ai.exe", "pragma-ai-telemetry.exe"],
+  "bin": ["pragma-ai.exe", "pragma-ai-gui.exe", "pragma-ai-telemetry.exe"],
   "post_install": "& \"$dir\\pragma-ai.exe\" agent install | Out-Null",
   "post_uninstall": "& \"$dir\\pragma-ai.exe\" agent uninstall | Out-Null",
   "checkver": {
