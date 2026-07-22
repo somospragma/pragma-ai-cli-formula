@@ -8,9 +8,15 @@
   to a given host is its built-in `private_hosts` config (an array of
   {match, headers} entries, applied to url/checkver/autoupdate downloads alike).
 
-  This script registers a Basic-auth header (built from your Nexus user token)
-  for Pragma's registry host, merging with any private_hosts entries you
-  already have configured for other buckets.
+  This can't be set via `scoop config private_hosts <value>`: Scoop's own
+  set_config stores whatever string you pass verbatim (it only special-cases
+  "True"/"False"), so a pre-serialized JSON array ends up saved as a literal
+  *string* property instead of a nested array. Scoop's download code then
+  fails with "Cannot bind argument to parameter 'StringData' because it is
+  null." This script instead reads/writes Scoop's config.json directly, the
+  same way Scoop itself does (lib/core.ps1), so private_hosts ends up as a
+  real array — and repairs the entry if an older version of this script
+  already wrote it as a broken string.
 
   Run this once, before `scoop bucket add pragma ...` / `scoop install pragma-ai`.
 
@@ -38,8 +44,6 @@ param(
     [string]$NexusHostPattern = 'registry(-dev)?\.pragma\.com\.co'
 )
 
-$ErrorActionPreference = 'Stop'
-
 if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     throw "Scoop is not installed. Install it first: https://scoop.sh"
 }
@@ -47,14 +51,26 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
 $pair = "${NexusUser}:${NexusToken}"
 $basicAuth = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($pair))
 
-# `scoop config private_hosts` prints a placeholder message (wording varies
-# by version) when the key has never been set — ConvertFrom-Json rejects that
-# non-JSON text, which is exactly the signal we want to fall back to [].
+# Mirrors Scoop's own config path resolution (lib/core.ps1: $configHome /
+# $configFile) — deliberately not going through `scoop config` for this key,
+# see the .DESCRIPTION above.
+$configHome = if ($env:XDG_CONFIG_HOME) { $env:XDG_CONFIG_HOME } else { "$env:USERPROFILE\.config" }
+$configFile = Join-Path $configHome "scoop\config.json"
+
+$config = if (Test-Path $configFile) {
+    Get-Content -Raw -Path $configFile | ConvertFrom-Json -ErrorAction Stop
+} else {
+    [PSCustomObject]@{}
+}
+
+# Recover from a previous broken run (private_hosts saved as a JSON-encoded
+# *string*) instead of silently discarding it.
+$raw = $config.private_hosts
 $existing = @()
-try {
-    $existing = @(scoop config private_hosts | ConvertFrom-Json)
-} catch {
-    $existing = @()
+if ($raw -is [string]) {
+    try { $existing = @($raw | ConvertFrom-Json -ErrorAction Stop) } catch { $existing = @() }
+} elseif ($null -ne $raw) {
+    $existing = @($raw)
 }
 
 $existing = @($existing | Where-Object { $_.match -ne $NexusHostPattern })
@@ -63,11 +79,14 @@ $existing += [PSCustomObject]@{
     headers = "Authorization=Basic $basicAuth"
 }
 
-# Windows PowerShell 5.1 lacks -AsArray and collapses single-element
-# collections to a scalar object, so force array brackets manually.
-$configValue = $existing | ConvertTo-Json -Compress
-if ($existing.Count -eq 1) { $configValue = "[$configValue]" }
-scoop config private_hosts $configValue | Out-Null
+$config | Add-Member -MemberType NoteProperty -Name 'private_hosts' -Value $existing -Force
+
+New-Item -ItemType Directory -Force -Path (Split-Path $configFile) | Out-Null
+$json = $config | ConvertTo-Json -Depth 6
+# Write without a BOM — Windows PowerShell 5.1's `-Encoding utf8` adds one,
+# and while Scoop's own reader tolerates it, plain UTF-8 matches config.json
+# as Scoop itself writes it.
+[System.IO.File]::WriteAllText($configFile, $json, (New-Object System.Text.UTF8Encoding($false)))
 
 Write-Host "Nexus credentials configured for Scoop (host pattern: $NexusHostPattern)."
 Write-Host ""
