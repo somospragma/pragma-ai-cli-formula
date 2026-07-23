@@ -1,16 +1,24 @@
 {
-  "version": "1.1.4",
+  "version": "1.3.8",
   "description": "Pragma AI CLI — AI Skill Market para pragmáticos",
   "homepage": "https://github.com/somospragma/pragma-ai-cli-formula",
   "license": "Proprietary",
   "architecture": {
     "64bit": {
-      "url": "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.1.4/pragma-ai-cli_1.1.4_windows_amd64.zip",
-      "hash": "fa145c8443da4a0684559b011470155d458d077ca193a93a161afe86697e903a"
+      "url": "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.3.8/pragma-ai-cli_1.3.8_windows_amd64.zip",
+      "hash": "aff3b012e42987271417c66ce40a36c5a4a8e47e5096dab2d85da6737944edb1"
     }
   },
   "bin": ["pragma-ai.exe", "pragma-ai-gui.exe", "pragma-ai-telemetry.exe"],
-  "post_install": "& \"$dir\\pragma-ai.exe\" agent install | Out-Null",
+  "notes": [
+    "If the install/update failed with a 401/403 downloading from Nexus, run this once:",
+    "  irm https://raw.githubusercontent.com/somospragma/pragma-ai-cli-formula/main/bin/setup-nexus-auth.ps1 | iex",
+    "It registers your Nexus user token with Scoop's private_hosts config."
+  ],
+  "post_install": [
+    "& \"$dir\\pragma-ai.exe\" agent install | Out-Null",
+    "& \"$dir\\pragma-ai.exe\" agent run | Out-Null"
+  ],
   "post_uninstall": "& \"$dir\\pragma-ai.exe\" agent uninstall | Out-Null",
   "checkver": {
     "url": "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/",
