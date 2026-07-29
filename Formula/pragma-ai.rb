@@ -1,27 +1,27 @@
 class PragmaAi < Formula
   desc "Pragma AI CLI — sync AI assistant configuration for Pragma projects"
   homepage "https://github.com/somospragma/pragma-ai-cli-formula"
-  version "1.3.8-dev"
+  version "1.4.0-dev"
 
   on_macos do
     on_arm do
-      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.3.8-dev/pragma-ai-cli_1.3.8-dev_darwin_arm64.tar.gz"
-      sha256 "d5a501315287031edaf75d9414480c800042a45534cb441668370e581513bdce"
+      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.4.0-dev/pragma-ai-cli_1.4.0-dev_darwin_arm64.tar.gz"
+      sha256 "af8db9104fe84f4be2dc0410181ae11472fc1387b9f2d4bc9abac9201ecb263d"
     end
     on_intel do
-      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.3.8-dev/pragma-ai-cli_1.3.8-dev_darwin_amd64.tar.gz"
-      sha256 "8a554b14b71d427a2e76d35f6f1215db6ee7cf498ac4e0ec2ba8ae0082a2c86a"
+      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.4.0-dev/pragma-ai-cli_1.4.0-dev_darwin_amd64.tar.gz"
+      sha256 "b2bc59a765139d94ab347a17977874ea65dd2df944e44c41f900284e753e47c5"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.3.8-dev/pragma-ai-cli_1.3.8-dev_linux_arm64.tar.gz"
-      sha256 "b5d304e29be4262452421f6a68fdb34c1729bb13c6717f6324182d19cddafce8"
+      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.4.0-dev/pragma-ai-cli_1.4.0-dev_linux_arm64.tar.gz"
+      sha256 "7366b3c9e9443a2854c9451a55e2267b5a7c751a8d37cc3a085570ac1842c95e"
     end
     on_intel do
-      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.3.8-dev/pragma-ai-cli_1.3.8-dev_linux_amd64.tar.gz"
-      sha256 "60245f5299af574a7771128f19d43d77501eae731b8c1c694a86117ed6ebc3ff"
+      url "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.4.0-dev/pragma-ai-cli_1.4.0-dev_linux_amd64.tar.gz"
+      sha256 "6e2db1f7acda689d466d3b32e5ae4e49a38b5720f9fae73bec3794b462e96e81"
     end
   end
 
