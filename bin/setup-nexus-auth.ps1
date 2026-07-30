@@ -35,14 +35,25 @@
   irm https://raw.githubusercontent.com/somospragma/pragma-ai-cli-formula/main/bin/setup-nexus-auth.ps1 | iex
 #>
 param(
-    [Parameter(Mandatory = $true)]
     [string]$NexusUser,
-
-    [Parameter(Mandatory = $true)]
     [string]$NexusToken,
-
     [string]$NexusHostPattern = 'registry(-dev)?\.pragma\.com\.co'
 )
+
+# Mandatory-parameter prompting never fires here: this script is meant to be
+# run via `irm ... | iex`, and Invoke-Expression evaluates its input as plain
+# statements rather than a real command invocation — the parameter binder
+# that triggers "supply a value for the following parameters" only runs when
+# a script/function is actually *called* (e.g. `.\script.ps1`), not when its
+# text is piped into iex. So [Parameter(Mandatory = $true)] silently leaves
+# these $null under iex instead of prompting. Fall back to Read-Host instead,
+# which works the same regardless of how this script was invoked.
+if (-not $NexusUser) {
+    $NexusUser = Read-Host "Nexus username (usually your Pragma email)"
+}
+if (-not $NexusToken) {
+    $NexusToken = Read-Host "Nexus user token (Nexus UI > profile icon > User Token — not your login password)"
+}
 
 if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     throw "Scoop is not installed. Install it first: https://scoop.sh"
