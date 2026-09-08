@@ -1,27 +1,27 @@
 class PragmaAi < Formula
   desc "Pragma AI CLI — sync AI assistant configuration for Pragma projects"
   homepage "https://github.com/somospragma/pragma-ai-cli-formula"
-  version "1.6.3"
+  version "1.6.5"
 
   on_macos do
     on_arm do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.6.3/pragma-ai-cli_1.6.3_darwin_arm64.tar.gz"
-      sha256 "58d53a1c8b499c8df6f7287e9afafbcd27619d6990fa471b183384b9ab8aec6b"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.6.5/pragma-ai-cli_1.6.5_darwin_arm64.tar.gz"
+      sha256 "d3a4c034ae326431921c772474e7f21a4d1cd4e984e5acdd973623b39fdb6296"
     end
     on_intel do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.6.3/pragma-ai-cli_1.6.3_darwin_amd64.tar.gz"
-      sha256 "e551bcceb6a0c3c291aa848171aaf6a7b4680e832142745a8fc094866dcd89af"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.6.5/pragma-ai-cli_1.6.5_darwin_amd64.tar.gz"
+      sha256 "efe1d374dccb9fd19e9223ef53b51508fc0ce16e8c8a97732cc989648cc72d51"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.6.3/pragma-ai-cli_1.6.3_linux_arm64.tar.gz"
-      sha256 "b43a31a5084f0b1042c168c951120a78a28f946212a841a3f641b9c346817ccf"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.6.5/pragma-ai-cli_1.6.5_linux_arm64.tar.gz"
+      sha256 "10d6be51c8f625be4e4fa7a1dea803e55b75021613e56715c17b8b6170a35f78"
     end
     on_intel do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.6.3/pragma-ai-cli_1.6.3_linux_amd64.tar.gz"
-      sha256 "9c62b0e221853cc54a8a728e46c49c3b3ee5204e58ee1b48daa02b2283750fa7"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.6.5/pragma-ai-cli_1.6.5_linux_amd64.tar.gz"
+      sha256 "01bb946070e3be830dccc52b02c4feb47a3049e53d19b8c23922b11cccb03e76"
     end
   end
 
