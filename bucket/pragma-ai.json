@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://registry-dev.pragma.com.co/repository/pragma-raw-dev-releases/pragma-ai-cli/1.7.3-dev/pragma-ai-cli_1.7.3-dev_windows_amd64.zip",
-      "hash": "7ac8494f5529dc11bb954bcffa61cab17c3de3c7b16cca6b675a9a7e1db214a6"
+      "hash": "815dc4d16f9fb6029fb7a7c36ec6d0913fc90cbc7215eb30a901c2bf8c6692a0"
     }
   },
   "bin": ["pragma-ai.exe", "pragma-ai-gui.exe", "pragma-ai-telemetry.exe"],
