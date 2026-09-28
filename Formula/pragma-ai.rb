@@ -1,27 +1,27 @@
 class PragmaAi < Formula
   desc "Pragma AI CLI — sync AI assistant configuration for Pragma projects"
   homepage "https://github.com/somospragma/pragma-ai-cli-formula"
-  version "1.7.6"
+  version "1.8.0"
 
   on_macos do
     on_arm do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.7.6/pragma-ai-cli_1.7.6_darwin_arm64.tar.gz"
-      sha256 "0e18c62a77465e94215d78c5da0762dd2aa5f6379df31f59be2a67d5e8f85cba"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.8.0/pragma-ai-cli_1.8.0_darwin_arm64.tar.gz"
+      sha256 "4ef3b4e0f34f8d9c54b4769e767c68dd42b5ecca6441e6abe4fd42ecf5fa377f"
     end
     on_intel do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.7.6/pragma-ai-cli_1.7.6_darwin_amd64.tar.gz"
-      sha256 "c85cebaabe4b35ec57ad6cd21bbb1efc91622c8be7bb70bd0dc667e6678c31ef"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.8.0/pragma-ai-cli_1.8.0_darwin_amd64.tar.gz"
+      sha256 "30fc6881cdfa65c514cd8a9defd55277a991c112bf976033f1bfd1fc2334d192"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.7.6/pragma-ai-cli_1.7.6_linux_arm64.tar.gz"
-      sha256 "ac503e1cc1834aba5f17391ec1d141f82b3e9632a5aaead1c6dee2b9bcad585a"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.8.0/pragma-ai-cli_1.8.0_linux_arm64.tar.gz"
+      sha256 "a93fa4f7d0a4ff0b203dd60ec8afd1f981a3909b8842963ccaf043b4c4316be4"
     end
     on_intel do
-      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.7.6/pragma-ai-cli_1.7.6_linux_amd64.tar.gz"
-      sha256 "4a50ca7c75dd57f4f14140dd855bc1b1458d04785b50ad265269a7e798420a7d"
+      url "https://registry.pragma.com.co/repository/pragma-raw-releases/pragma-ai-cli/1.8.0/pragma-ai-cli_1.8.0_linux_amd64.tar.gz"
+      sha256 "6e99b7b69535ac4cb927b6423fc82ef1f937f28f61efe93fcc7215a75ce2f0bd"
     end
   end
 
