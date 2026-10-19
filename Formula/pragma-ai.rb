@@ -27,7 +27,7 @@ class PragmaAi < Formula
 
   def install
     bin.install "pragma-ai"
-    bin.install "pragma-ai-gui"
+    bin.install "pragma-ai-gui" if File.exist?("pragma-ai-gui")
     bin.install "pragma-ai-telemetry"
   end
 
